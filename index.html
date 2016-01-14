@@ -1,0 +1,308 @@
+<!DOC_TYPE HTML>
+<html>
+	<head>
+		<title>Flight Visualization</title>
+		<style>
+			html, body, #map{
+				margin: 0;
+				padding: 0;
+				height: 100%;
+			}
+		</style>
+		<script src="styles.js"></script>
+		<script src="data.js"></script>
+		<script src="http://maps.googleapis.com/maps/api/js"></script>
+		<script>
+			function initialize() {
+				var mapCanvas = document.getElementById('map');
+				var mapOptions = {
+					// 46.080485, -64.771087 = Close to Moncton
+					// 42.224903, -99.529414 = Centre of North America
+				center: new google.maps.LatLng(44.256458, -76.744456),
+				zoom: 5,
+				mapTypeId: google.maps.MapTypeId.ROADMAP,
+				styles:styles
+			}
+				var map = new google.maps.Map(mapCanvas,mapOptions);
+
+				var flightPath = {
+					path: google.maps.SymbolPath.CIRCLE,
+					scale:1,
+					strokeColor: '#FFF'
+				};
+
+				var flightPathIcon = [{icon:flightPath,offset:'100%'}]
+
+				// var flightLine = new google.maps.Polyline({
+				// 	path: baw238Coords,
+				// 	icons: [{icon:flightPath,offset:'100%'}],
+				// 	strokeOpacity: 1.0,
+    // 				strokeWeight: 0,
+				// 	map:map
+    				
+				// });
+
+				var poe429 = new google.maps.Polyline({
+					path: POE429Coords,
+					icons: [{icon:flightPath,offset:'100%'}],
+					strokeOpacity: 1.0,
+					strokeWeight: 0,
+					map:map
+				});
+
+				var poe432 = new google.maps.Polyline({
+					path:POE432Coords,
+					icons:[{icon:flightPath,offset:'100%'}],
+					strokeOpacity:1.0,
+					strokeWeight:0,
+					map:map
+				});
+
+				var poe688 = new google.maps.Polyline({
+					path:POE688Coords,
+					icons:[{icon:flightPath,offset:'100%'}],
+					strokeOpacity:1.0,
+					strokeWeight:0,
+					map:map
+				});
+
+				var poe951 = new google.maps.Polyline({
+					path:POE951Coords,
+					icons:[{icon:flightPath,offset:'100%'}],
+					strokeOpacity:1.0,
+					strokeWeight:0,
+					map:map
+				});
+
+				var poe425 = new google.maps.Polyline({
+					path:POE425Coords,
+					icons:[{icon:flightPath,offset:'100%'}],
+					strokeOpacity:1.0,
+					strokeWeight:0,
+					map:map
+				});
+
+				var poe147 = new google.maps.Polyline({
+					path:POE147Coords,
+					icons:[{icon:flightPath,offset:'100%'}],
+					strokeOpacity:1.0,
+					strokeWeight:0,
+					map:map
+				});
+
+				var poe427 = new google.maps.Polyline({
+					path:POE427Coords,
+					icons:[{icon:flightPath,offset:'100%'}],
+					strokeOpacity:1.0,
+					strokeWeight:0,
+					map:map
+				});
+
+				var poe638 = new google.maps.Polyline({
+					path:POE638Coords,
+					icons:[{icon:flightPath,offset:'100%'}],
+					strokeOpacity:1.0,
+					strokeWeight:0,
+					map:map
+				});
+
+				var poe143 = new google.maps.Polyline({
+					path:POE143Coords,
+					icons:[{icon:flightPath,offset:'100%'}],
+					strokeOpacity:1.0,
+					strokeWeight:0,
+					map:map
+				});
+
+				var poe950 = new google.maps.Polyline({
+					path:POE950Coords,
+					icons:[{icon:flightPath,offset:'100%'}],
+					strokeOpacity:1.0,
+					strokeWeight:0,
+					map:map
+				});
+
+				var poe276 = new google.maps.Polyline({
+					path:POE276Coords,
+					icons:[{icon:flightPath,offset:'100%'}],
+					strokeOpacity:1.0,
+					strokeWeight:0,
+					map:map
+				});
+
+				var poe267 = new google.maps.Polyline({
+					path:POE267Coords,
+					icons:[{icon:flightPath,offset:'100%'}],
+					strokeOpacity:1.0,
+					strokeWeight:0,
+					map:map
+				});
+
+				var poe689 = new google.maps.Polyline({
+					path:POE689Coords,
+					icons:[{icon:flightPath,offset:'100%'}],
+					strokeOpacity:1.0,
+					strokeWeight:0,
+					map:map
+				});
+
+				var poe272 = new google.maps.Polyline({
+					path:POE272Coords,
+					icons:[{icon:flightPath,offset:'100%'}],
+					strokeOpacity:1.0,
+					strokeWeight:0,
+					map:map
+				});
+
+				var poe394 = new google.maps.Polyline({
+					path:POE394Coords,
+					icons:[{icon:flightPath,offset:'100%'}],
+					strokeOpacity:1.0,
+					strokeWeight:0,
+					map:map
+				});
+
+				var poe630 = new google.maps.Polyline({
+					path:POE630Coords,
+					icons:[{icon:flightPath,offset:'100%'}],
+					strokeOpacity:1.0,
+					strokeWeight:0,
+					map:map
+				});
+
+				var poe579 = new google.maps.Polyline({
+					path:POE579Coords,
+					icons:[{icon:flightPath,offset:'100%'}],
+					strokeOpacity:1.0,
+					strokeWeight:0,
+					map:map
+				});
+
+				var poe541 = new google.maps.Polyline({
+					path:POE541Coords,
+					icons:[{icon:flightPath,offset:'100%'}],
+					strokeOpacity:1.0,
+					strokeWeight:0,
+					map:map
+				});
+
+				var poe395 = new google.maps.Polyline({
+					path:POE395Coords,
+					icons:[{icon:flightPath,offset:'100%'}],
+					strokeOpacity:1.0,
+					strokeWeight:0,
+					map:map
+				});
+
+				var poe274 = new google.maps.Polyline({
+					path:POE274Coords,
+					icons:[{icon:flightPath,offset:'100%'}],
+					strokeOpacity:1.0,
+					strokeWeight:0,
+					map:map
+				});
+
+				var poe145 = new google.maps.Polyline({
+					path:POE145Coords,
+					icons:[{icon:flightPath,offset:'100%'}],
+					strokeOpacity:1.0,
+					strokeWeight:0,
+					map:map
+				});
+
+				var poe511 = new google.maps.Polyline({
+					path:POE511Coords,
+					icons:[{icon:flightPath,offset:'100%'}],
+					strokeOpacity:1.0,
+					strokeWeight:0,
+					map:map
+				});
+
+				var poe268 = new google.maps.Polyline({
+					path:POE268Coords,
+					icons:[{icon:flightPath,offset:'100%'}],
+					strokeOpacity:1.0,
+					strokeWeight:0,
+					map:map
+				});
+
+				var poe663 = new google.maps.Polyline({
+					path:POE663Coords,
+					icons:[{icon:flightPath,offset:'100%'}],
+					strokeOpacity:1.0,
+					strokeWeight:0,
+					map:map
+				});
+
+				var poe987 = new google.maps.Polyline({
+					path:POE987Coords,
+					icons:[{icon:flightPath,offset:'100%'}],
+					strokeOpacity:1.0,
+					strokeWeight:0,
+					map:map
+				});
+
+				var poe728 = new google.maps.Polyline({
+					path:POE728Coords,
+					icons:[{icon:flightPath,offset:'100%'}],
+					strokeOpacity:1.0,
+					strokeWeight:0,
+					map:map
+				});
+
+				var poe431 = new google.maps.Polyline({
+					path:POE431Coords,
+					icons:[{icon:flightPath,offset:'100%'}],
+					strokeOpacity:1.0,
+					strokeWeight:0,
+					map:map
+				});
+
+				// setTimeout(function() {animateFlight(flightLine,53.8)},0);
+				setTimeout(function() {animateFlight(poe429,45.9)},8000);
+				setTimeout(function() {animateFlight(poe432,38.4)},0);
+				setTimeout(function() {animateFlight(poe688,32.4)},0);
+				setTimeout(function() {animateFlight(poe951,44.2)},0);
+				setTimeout(function() {animateFlight(poe425,44.2)},0);
+				setTimeout(function() {animateFlight(poe147,44.2)},12000);
+				setTimeout(function() {animateFlight(poe427,44.2)},4000);
+				setTimeout(function() {animateFlight(poe638,44.7)},16000);
+				setTimeout(function() {animateFlight(poe143,44.8)},0);
+				setTimeout(function() {animateFlight(poe950,44.3)},0);
+				setTimeout(function() {animateFlight(poe276,44.4)},16000);
+				setTimeout(function() {animateFlight(poe267,45.2)},0);
+				setTimeout(function() {animateFlight(poe689,44.6)},0);
+				setTimeout(function() {animateFlight(poe272,45.4)},8000);
+				setTimeout(function() {animateFlight(poe394,44.0)},0);
+				setTimeout(function() {animateFlight(poe630,44.0)},0);
+				setTimeout(function() {animateFlight(poe579,44.0)},0);
+				setTimeout(function() {animateFlight(poe541,44.0)},0);
+				setTimeout(function() {animateFlight(poe395,44.0)},0);
+				setTimeout(function() {animateFlight(poe274,44.0)},12000);
+				setTimeout(function() {animateFlight(poe145,44.0)},8000);
+				setTimeout(function() {animateFlight(poe511,44.0)},0);
+				setTimeout(function() {animateFlight(poe268,44.0)},4000);
+				setTimeout(function() {animateFlight(poe663,44.0)},0);
+				setTimeout(function() {animateFlight(poe987,44.0)},0);
+				setTimeout(function() {animateFlight(poe728,44.0)},0);
+				setTimeout(function() {animateFlight(poe431,44.0)},12000);
+			}
+
+			function animateFlight(flight, speed){
+				var count = 0;
+				window.setInterval(function() {
+					count = (count + 1)// % 200; // Add modulus something to get it to repeat
+
+					var icons = flight.get('icons');
+					icons[0].offset = (count / 2) + '%';
+					flight.set('icons', icons);
+				}, 20);
+			}
+
+			google.maps.event.addDomListener(window, 'load', initialize);
+		</script>
+	</head>
+	<body>
+		<div id="map"></div>
+	</body>
+</html>

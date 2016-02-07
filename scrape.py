@@ -13,7 +13,7 @@ def delNonNumber(arrToCheck):
 	for y in valToDelete:
 		arrToCheck.remove(y)
 
-textFile = "_flights.txt"
+textFile = "flights.txt"
 with open(textFile) as f:
 	urlArray = f.readlines()
 

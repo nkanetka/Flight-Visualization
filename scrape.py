@@ -20,16 +20,16 @@ with open(textFile) as f:
 flights = [] # Array for the flights. Same length as the number of URLs
 
 for j in range(0,len(urlArray),1):
-	# print(j)
 	pageURL = urlArray[j]
 	icaoAirline = 'POE'
 	page = requests.get(pageURL)
 	data = page.text
-	# print(data)
+
 	soup = BeautifulSoup(data, "lxml")
 
 	table1 = soup.find('table', class_="prettyTable")
 	# print(table1)
+	
 	# Error testing
 	if table1 == "":
 		print("Error coming!")
@@ -70,8 +70,6 @@ for j in range(0,len(urlArray),1):
 
 		flights.append(variableString)
 	# End of Error testing
-
-	
 
 jsFile = open('data.js', 'w')
 for k in range(0,len(flights),1):
